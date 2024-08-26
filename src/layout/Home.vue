@@ -3,14 +3,14 @@
  * @Author: zhangxin
  * @Date: 2023-04-12 13:14:28
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2024-08-21 11:16:26
+ * @LastEditTime: 2024-08-26 15:01:07
  * @Description:
 -->
 <script setup>
+import MenuItem from './menu-item.vue'
 import { EarthSdk2Container } from '@/biz/EarthSDK2/view/EarthSdk2Container'
 import { config } from '@/config/earthsdk2.conf'
 
-import MenuItem from './menu-item.vue'
 import { useMenu } from '@/hooks/useMenu.js'
 import { routes } from '@/router/useRouter.js'
 
@@ -29,7 +29,7 @@ const menuList = computed(() => {
 })
 function handleUser() { }
 function handleCommand(command) {
-  if(command === 'userLogout'){
+  if (command === 'userLogout') {
     userLogout()
   }
 }
@@ -49,8 +49,10 @@ function routerSelect(routeName) {
       <div class="home-header-weather">
         <Weather />
       </div>
-      <el-dropdown class="home-header-user" size="small" split-button type="primary" @command="handleCommand"
-        @click="handleUser">
+      <el-dropdown
+        class="home-header-user" size="small" split-button type="primary" @command="handleCommand"
+        @click="handleUser"
+      >
         用户名称
         <template #dropdown>
           <el-dropdown-menu>
@@ -64,8 +66,10 @@ function routerSelect(routeName) {
 
     <el-container class="home-main">
       <el-aside class="home-mian-menu" width="250px">
-        <el-menu background-color="#fff" text-color="#000" active-text-color="#3F63EA" :default-active="defaultActive"
-          mode="vertical" unique-opened @select="routerSelect">
+        <el-menu
+          background-color="#fff" text-color="#000" active-text-color="#3F63EA" :default-active="defaultActive"
+          mode="vertical" unique-opened @select="routerSelect"
+        >
           <template v-for="cell in menuList" :key="cell.name">
             <MenuItem v-if="menu.renderSubmenu(cell)" :cell="cell" />
 
@@ -137,6 +141,7 @@ function routerSelect(routeName) {
 
     &-content {
       width: calc(100% - 250px);
+      position: relative;
       height: 100%;
       padding: 0 !important;
       background-color: #f2f6fa;

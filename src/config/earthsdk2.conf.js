@@ -3,9 +3,21 @@
  * @Author: abc-0886kAX-code
  * @Date: 2024-08-21 11:12:49
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2024-08-22 15:39:06
+ * @LastEditTime: 2024-08-26 16:31:41
  * @Description:
  */
-const config = { "viewers": [{ "atmosphere": true, "depthOfField": false, "apiKey": "", "globeShow": true, "show": true, "type": "ESCzmViewer", "fov": 60, "sun": true, "lonLatFormat": "DECIMAL_DEGREE", "cloud": 0, "apiUrl": "", "id": "5e8243dc-0bae-408f-8c1e-8fc4b8850836", "rain": 0, "debug": false, "secretKey": "", "timeSync": false, "speechVoiceMode": "", "ionAccessToken": "", "currentTime": 1724288400000, "moon": true, "snow": 0, "name": "undefined_ined", "simulationTime": 1724256000000, "hoverTime": 2, "fog": 0 }], "viewCollection": [], "sceneTree": { "root": { "children": [{ "children": [{ "children": [], "collapsed": true, "name": "天地图影像", "sceneObj": { "maximumLevel": 18, "name": "天地图影像", "rectangle": [-180, -90, 180, 90], "id": "21388f52-863a-45e9-98b0-b2c1a2ce283d", "allowPicking": true, "type": "ESImageryLayer", "url": "https://t2.tianditu.gov.cn/img_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILECOL={x}&TILEROW={y}&TILEMATRIX={z}&tk=ef590000990e247813bf916bdce1d941" } }, { "children": [], "collapsed": true, "name": " cesium官方地形", "sceneObj": { "flyInParam": { "flyDuration": 1, "rotation": [-164.85594177246094, -75.60304260253906, 0], "position": [122.26901393550551, 46.680871999138915, 17827.1049816171] }, "name": " cesium官方地形", "id": "6ea54d24-a467-4642-a8de-984c3529d5c0", "allowPicking": true, "type": "ESTerrainLayer", "zIndex": 1 } }, { "children": [], "collapsed": true, "name": "全球境界", "sceneObj": { "options": { "type": "xyz" }, "name": "全球境界", "id": "95a328c8-895d-482f-96cd-599ac4f8606e", "allowPicking": true, "type": "ESImageryLayer", "url": "http://t0.tianditu.gov.cn/ibo_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=ef590000990e247813bf916bdce1d941", "zIndex": 1 } }], "name": "新建场景" }] } }, "asset": { "modifiedTime": "2024-08-22T07:38:34.061Z", "name": "图层管理", "createdTime": "2022-06-17T05:54:41.744Z", "type": "ESObjectsManager", "version": "0.1.0" }, "lastView": { "rotation": [24.677334245145232, -89.98195249007843, 0], "position": [109.70340898142685, 55.38458816813481, 20089953.978209708] } }
+import BaseConfig from '@/assets/json/基础场景.json';
+const config = BaseConfig;
 const layers = []
-export { config, layers }
+
+// 初始化位置
+const initPlace = {
+  position: [116.416411, 38.849242, 409882],
+  pitch: -70,
+  heading: 0,
+}
+
+const SignalingServerUri = 'http://192.1.1.244:9007';
+const AppExampleId = '2211082c-00bf-4aeb-b6e1-8c276310f617'
+
+export { config, layers, initPlace, SignalingServerUri, AppExampleId }

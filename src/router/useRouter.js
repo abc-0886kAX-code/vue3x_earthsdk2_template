@@ -1,9 +1,9 @@
 /*
- * @FilePath: \vue2.7_admin_template-master\src\router\useRouter.js
+ * @FilePath: \vue3x_earthsdk2_template\src\router\useRouter.js
  * @Author: zhangxin
  * @Date: 2022-11-30 10:18:11
- * @LastEditors: zhangxin
- * @LastEditTime: 2023-11-16 17:19:15
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2024-08-26 14:53:28
  * @Description:
  */
 import { defineRouter } from './defineRouter'
@@ -31,10 +31,32 @@ export const routes = [
   {
     name: 'layout',
     path: '/',
-    redirect: '/home',
+    redirect: '/example',
     meta: defineMeta({ level: 0 }),
     component: () => import('@/layout/Home.vue'),
     children: [
+      {
+        path: '/example',
+        name: 'example',
+        redirect: '/example/scene-switch',
+        meta: {
+          title: '示例',
+          hidden: 'true',
+        },
+        component: () => import('@/layout/main-layout/main-layout.vue'),
+        children: [
+          {
+            path: '/example/scene-switch',
+            name: 'scene-switch',
+            meta: {
+              title: '场景切换',
+              hidden: 'true',
+            },
+            component: () => import('@/pages/Example/SceneSwitch.vue'),
+            children: [],
+          },
+        ],
+      },
       {
         path: '/home',
         name: 'home',
