@@ -3,7 +3,7 @@
  * @Author: abc-0886kAX-code
  * @Date: 2024-08-26 15:33:28
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2024-08-26 16:42:10
+ * @LastEditTime: 2024-08-26 17:25:39
  * @Description:
  */
 import { defineStore } from 'pinia'
@@ -45,9 +45,6 @@ export const useEarth = defineStore(Namespace, {
         },
         position: initPlace.position,
       })
-
-      this.cloudRender.activeViewer.innerViewer.sunSkyControlled = true;
-      this.cloudRender.activeViewer.currentTime = new Date().getTime()
     },
     close() {
       this.viewer.quit()
