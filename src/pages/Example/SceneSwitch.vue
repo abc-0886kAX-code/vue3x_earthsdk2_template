@@ -1,3 +1,11 @@
+<!--
+ * @FilePath: \vue3x_earthsdk2_template\src\pages\Example\SceneSwitch.vue
+ * @Author: abc-0886kAX-code
+ * @Date: 2024-08-26 14:50:00
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2024-09-11 17:55:28
+ * @Description:
+-->
 <script setup>
 // 引入依赖，变量声明
 import { storeToRefs } from 'pinia'
